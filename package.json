@@ -1,0 +1,15 @@
+{
+  "name": "http-forwarding",
+  "version": "0.1.0",
+  "description": "An HTTP server that forwards requests to HTTP or HTTPS endpoints, logging requests and responses.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David L Kinney <david@pinkhop.com>",
+  "license": "MIT",
+  "dependencies": {
+    "underscore": "^1.6.0",
+    "minimist": "0.0.8"
+  }
+}

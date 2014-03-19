@@ -24,6 +24,13 @@ if (typeof destination !== 'string') {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// DATA CLEANSING
+
+// strip the trailing / off the destination, if present, to prevent sending the 
+// destination `GET //path/to/content` instead of `GET /path/to/content`
+if (/\/$/.test(destination)) destination = destination.substring(0,destination.length-1);
+
+////////////////////////////////////////////////////////////////////////////////
 // FUNCTIONS
 
 // All of the HTTP headers that come from Node's http module are lower-case. We 

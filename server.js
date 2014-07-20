@@ -139,8 +139,10 @@ var translateHostInHeaders = function(headers, options) {
     var header = kvp[0];
     var fromValue  = kvp[1];
     
-    var toValue = fromValue.replace(fromHostPort, toHostPort).replace(fromHostOnly, toHostOnly);
-    if (fromValue !== toValue) headers[header] = toValue;
+    if (typeof fromValue === 'string') {
+      var toValue = fromValue.replace(fromHostPort, toHostPort).replace(fromHostOnly, toHostOnly);
+      if (fromValue !== toValue) headers[header] = toValue;
+    }
   });
 };
 
